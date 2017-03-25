@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <TestModuleMenu module="TestModule">
+            <title>Test Module</title>
+            <sort_order>82</sort_order>
+            <children>
+
+                <support module="TestModule">
+                    <title>Support</title>
+                    <sort_order>10</sort_order>
+                    <action>adminhtml/support</action>
+                </support>
+
+                <products module="TestModule">
+                    <title>Products</title>
+                    <sort_order>20</sort_order>
+                    <action>adminhtml/products</action>
+                </products>
+
+            </children>
+        </TestModuleMenu>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <TestModule module="TestModule">
+                                        <title>Test Module</title>
+                                    </TestModule>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+
+                    <TestModuleMenu>
+                        <title>Test Module</title>
+                        <sort_order>82</sort_order>
+                        <children>
+
+                            <support>
+                                <title>Support</title>
+                            </support>
+
+                            <products>
+                                <title>Products</title>
+                            </products>
+
+                        </children>
+                    </TestModuleMenu>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

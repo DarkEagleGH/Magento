@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <TestVendor_TestModule>
+            <version>1.0.0</version>
+        </TestVendor_TestModule>
+    </modules>
+
+    <global>
+        <TestModule>
+            <email>email@server.com</email>
+        </TestModule>
+
+        <blocks>
+            <TestModule>
+                <class>TestVendor_TestModule_Block</class>
+            </TestModule>
+        </blocks>
+
+        <models>
+            <TestModule>
+                <class>TestVendor_TestModule_Model</class>
+                <resourceModel>TestModule_mysql4</resourceModel>
+            </TestModule>
+            <TestModule_mysql4>
+                <class>TestVendor_TestModule_Model_Mysql4</class>
+                <entities>
+                    <notes>
+                        <table>testmodule_notes</table>
+                    </notes>
+
+                    <products>
+                        <table>catalog_product_entity</table>
+                    </products>
+                </entities>
+            </TestModule_mysql4>
+        </models>
+
+        <resources>
+            <TestModule_setup>
+                <setup>
+                    <module>TestVendor_TestModule</module>
+                </setup>
+            </TestModule_setup>
+        </resources>
+
+        <helpers>
+            <TestModule>
+                <class>TestVendor_TestModule_Helper</class>
+            </TestModule>
+        </helpers>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <TestModule before="Mage_Adminhtml">TestVendor_TestModule_Adminhtml</TestModule>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <default>
+
+    </default>
+</config>
